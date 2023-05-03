@@ -152,13 +152,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == uploadImagePreviewID) {
             if (resultCode == RESULT_OK && data != null) {
                 Uri selectedPhoto = data.getData();
-                // Log.e("uri", selectedPhoto.toString());
-                // Set the image in imageview for display
-                // imagePreview.setImageURI(selectedPhoto);
-
                 // Get absolute file path for uploaded image in device from URI
                 ImagePath = getPath(selectedPhoto);
-                // Log.e("imagepath", ImagePath);
 
                 try {
                     Bitmap uploadBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedPhoto);
@@ -250,7 +245,6 @@ public class MainActivity extends AppCompatActivity {
                         String error_key_value = response.getString("Error");
                         Log.e("Error Message", "---------------->" + error_key_value);
 
-                        // change to use json object
                         // textPrediction = (TextView) findViewById(R.id.textPrediction);
                         textPrediction.setText(error_key_value);
                     }
