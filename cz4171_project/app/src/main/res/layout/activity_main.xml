@@ -10,7 +10,7 @@
         android:id="@+id/imagePreview"
         android:layout_width="380dp"
         android:layout_height="255dp"
-        android:background="#D3D3D3"
+        android:background="#FFFFFF"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/placeholder"
         tools:srcCompat="@drawable/placeholder" />
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingVertical="10dp"
-        android:text="Take or upload a picture and get predictions!"
+        android:text="Take or upload a picture and get a prediction!"
         android:textStyle="bold"
         android:textSize="18sp"
         android:layout_below="@+id/imagePreview"
@@ -67,7 +67,7 @@
         android:paddingVertical="30dp"
         android:text="Predictions appear here!"
         android:textStyle="italic"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:layout_below="@+id/buttonPredict"
         android:layout_centerHorizontal="true" />
 

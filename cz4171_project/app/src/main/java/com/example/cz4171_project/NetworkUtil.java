@@ -1,24 +1,26 @@
 package com.example.cz4171_project;
 
-import android.media.Image;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
-import java.util.List;
+public class NetworkUtil {
+    private static AsyncHttpClient client = new AsyncHttpClient();
 
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
+    public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.get(url, params, responseHandler);
+    }
 
-import retrofit2.http.GET;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.Part;
-import retrofit2.http.Url;
+    public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.post(url, params, responseHandler);
+    }
 
-public interface NetworkUtil {
-    @Multipart
-    @POST("/")
-    Call<String> uploadImage(@Part MultipartBody.Part part);
+    public static void getByUrl(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.get(url, params, responseHandler);
+    }
+
+    public static void postByUrl(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.post(url, params, responseHandler);
+    }
 
 }
